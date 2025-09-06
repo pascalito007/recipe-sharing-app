@@ -31,26 +31,60 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Découvrez nos recettes
-            <span className="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
-              {" "}
-              délicieuses recettes
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Explorez une collection de recettes partagées par notre communauté
-            de passionnés de cuisine.
-          </p>
-          <div className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-              <span>{recipes.length} recettes disponibles</span>
+        {/* Hero Section avec background amélioré */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50 rounded-3xl mb-16 shadow-lg">
+          {/* Éléments décoratifs en arrière-plan */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-orange-400 rounded-full blur-xl"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-yellow-400 rounded-full blur-xl"></div>
+            <div className="absolute bottom-20 left-32 w-24 h-24 bg-red-400 rounded-full blur-xl"></div>
+            <div className="absolute bottom-10 right-10 w-18 h-18 bg-orange-300 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="relative px-6 py-10 text-center">
+            {/* Badge trending */}
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full mb-4 shadow-sm border border-orange-200">
+              <span className="text-lg">🔥</span>
+              <span className="text-xs font-medium text-orange-700">Tendance culinaire</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-              <span>Nouvelles recettes chaque jour</span>
+            
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="text-gray-900">Découvrez nos</span>
+              <br />
+              <span className="bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
+                délicieuses recettes
+              </span>
+            </h1>
+            
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">
+              Une collection <span className="font-semibold text-orange-600">exclusive</span> de recettes 
+              partagées par notre communauté de chefs passionnés 
+              <span className="inline-block ml-2">👨‍🍳</span>
+            </p>
+            
+            {/* Stats avec icônes */}
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+              <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="text-lg">📚</div>
+                <div className="text-left">
+                  <div className="font-bold text-lg text-gray-900">{recipes.length}</div>
+                  <div className="text-xs text-gray-600">Recettes</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="text-lg">⭐</div>
+                <div className="text-left">
+                  <div className="font-bold text-lg text-gray-900">4.8</div>
+                  <div className="text-xs text-gray-600">Note</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="text-lg">🌟</div>
+                <div className="text-left">
+                  <div className="font-bold text-lg text-gray-900">Nouveau</div>
+                  <div className="text-xs text-gray-600">Chaque jour</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
