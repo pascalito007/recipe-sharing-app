@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RecettesApp - Application de partage de recettes
 
-## Getting Started
+Une application moderne de partage de recettes construite avec Next.js 15, TypeScript et Tailwind CSS.
 
-First, run the development server:
+## 🚀 Fonctionnalités
+
+- **Page publique** : Affichage de toutes les recettes avec cartes (image, titre, auteur, date)
+- **Page de détail** : Vue complète d'une recette avec ingrédients et étapes
+- **Authentification simple** : Connexion avec nom d'utilisateur et email
+- **Création de recettes** : Interface complète pour créer et publier de nouvelles recettes
+- **Upload d'images** : Support du glisser-déposer pour les images de recettes
+- **Stockage local** : Données sauvegardées dans localStorage (pour les tests)
+
+## 🛠️ Technologies utilisées
+
+- **Next.js 15** avec App Router
+- **TypeScript** pour la sécurité des types
+- **Tailwind CSS** pour le style
+- **React Context** pour la gestion d'état
+- **localStorage** pour la persistance des données
+
+## 📦 Installation et démarrage
 
 ```bash
+# Installation des dépendances
+npm install
+
+# Démarrage du serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build de production
+npm run build
+
+# Démarrage du serveur de production
+npm start
+
+# Vérification des types TypeScript
+npm run type-check
+
+# Linting
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L'application sera accessible sur [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Structure du projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Pages Next.js (App Router)
+│   ├── create/            # Page de création de recettes
+│   ├── recipe/[id]/       # Page de détail d'une recette
+│   ├── api/placeholder/   # API pour images placeholder
+│   ├── layout.tsx         # Layout principal
+│   └── page.tsx          # Page d'accueil
+├── components/            # Composants React réutilisables
+│   ├── Header.tsx         # En-tête avec navigation
+│   ├── LoginForm.tsx      # Formulaire de connexion
+│   ├── RecipeCard.tsx     # Carte de recette
+│   └── ImageUpload.tsx    # Composant d'upload d'image
+├── contexts/              # Contextes React
+│   └── AuthContext.tsx    # Gestion de l'authentification
+├── lib/                   # Utilitaires et helpers
+│   ├── storage.ts         # Gestion du localStorage
+│   └── sampleData.ts      # Données d'exemple
+└── types/                 # Types TypeScript
+    └── recipe.ts          # Types pour les recettes
+```
 
-## Learn More
+## 🎯 Utilisation
 
-To learn more about Next.js, take a look at the following resources:
+### Première connexion
+1. Ouvrez l'application dans votre navigateur
+2. Entrez un nom d'utilisateur et un email pour vous connecter
+3. Explorez les recettes d'exemple incluses
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Créer une recette
+1. Cliquez sur "Créer une recette" dans l'en-tête
+2. Remplissez le formulaire avec :
+   - Titre et description
+   - Image (optionnel, glisser-déposer supporté)
+   - Temps de préparation et de cuisson
+   - Nombre de portions
+   - Liste d'ingrédients
+   - Étapes de préparation
+3. Cliquez sur "Publier la recette"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Voir une recette
+- Cliquez sur n'importe quelle carte de recette pour voir les détails complets
 
-## Deploy on Vercel
+## 📝 Fonctionnalités techniques
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Responsive design** : Interface adaptée mobile et desktop
+- **TypeScript strict** : Typage complet pour une meilleure maintenabilité
+- **Gestion d'état contextuelle** : React Context pour l'authentification
+- **Validation de formulaire** : Validation côté client des données
+- **Images optimisées** : Utilisation de Next.js Image component
+- **Stockage local** : Persistance des données avec localStorage
+- **Loading states** : États de chargement pour une meilleure UX
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔮 Évolutions futures possibles
+
+- Intégration d'une base de données (PostgreSQL, MongoDB)
+- Authentification avancée (JWT, OAuth)
+- Recherche et filtres de recettes
+- Système de favoris et de notes
+- Partage social
+- API REST pour la gestion des recettes
+- Tests unitaires et e2e
+
+## 📄 License
+
+Ce projet est sous licence MIT.
