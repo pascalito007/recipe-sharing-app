@@ -5,6 +5,7 @@ import { useAuth } from "@/contexts/AuthContext";
 
 export default function Header() {
   const { user, logout } = useAuth();
+  console.log("user in header:", user);
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
@@ -72,7 +73,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/login"
-                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 border border-primary-600 hover:border-primary-700"
+                className="bg-black hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 border border-primary-600"
               >
                 <svg
                   className="w-4 h-4"
